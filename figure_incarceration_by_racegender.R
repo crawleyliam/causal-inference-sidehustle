@@ -2,7 +2,6 @@
 # x axis. Refer to my presentation on graphing for more detail.
 
 library(tidyverse)
-library(ggplot2)
 library(here)
 
 read_csv(here("data/NLSY97_clean.csv")) %>%
