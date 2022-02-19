@@ -1,0 +1,75 @@
+\documentclass{article}
+
+% these packages let you do math
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+% we need these packages for fancy R tables
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage{colortbl}
+\usepackage{xcolor}
+
+% these packages play with the spacing/margins of the document. Uncomment the commands on lines 16 and 17 to see what they do.
+
+\usepackage{setspace}
+\usepackage{geometry}
+
+%\doublespacing
+%\geometry{margin=1.5in}
+
+% this package helps us with including images. Setting the graphics path makes it easier to refer to things in the \includegraphics command.
+\usepackage{graphicx}
+\graphicspath{ {../figures/} }
+
+% make some hyperlinks using the \href command
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    urlcolor=blue
+}
+
+% set the author, title, and date of the document. \maketitle adds it to the document.
+\author{Liam Crawley}
+\title{Incarcerations by Race and Gender using NLSY97}
+\date{Sping 2022}
+
+\begin{document}
+\maketitle
+
+\section{Analysis}
+
+Using data from the NLSY 1997, which is a longitudinal study beginning
+in 1997 and continued through 2019, we looked at incarcerations
+by race and gender in 2002. Figure 1 visualizes the mean number of incarcerations
+by race in 2002, color coded by gender. We see Black Males account for the largest proportion,
+followed by Hispanic Males. When Mixed Race Females and Non-Blake, Non-Hispanic males 
+are included with the aformentioned groups, they make up about $90\%$ of all incarcerations
+in 2002 for this given sample. 
+    
+Table 1 is a more specific breakdown of the proportions
+shown by the bar graph. It is worth noting that the proportion of Mixed Race male incarcerations
+is $0.00$, which is incorrect I believe and was caused by an error summing across the data. Mixed 
+Race males should account for about $4\%$ of overall incarcerations in 2002 within this sample.
+Table 2 shows the regression output from a linear model using incarcerations in 2002 as the dependent
+variable. We find all coefficients significant at the $5\%$ level. Holding
+race constant, being male is associated with a $19.4\%$ increase in incarceration rate.
+\section{Figures and Tables}
+
+\begin{figure}[H]
+    \caption{Mean Number of Incarcerations in 2002 by Race and Gender}
+    \begin{center}
+        \includegraphics[width=.85\textwidth]{incarcerations_by_racegender.png}
+    \end{center}
+\end{figure}
+
+
+\input{../tables/incarcerations_by_racegender.tex}
+
+\input{../tables/regress_incarcerations_by_racegender.tex}
+
+
+
+
+\end{document}
