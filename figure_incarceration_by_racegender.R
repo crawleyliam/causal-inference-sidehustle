@@ -12,8 +12,7 @@ read_csv(here("data/NLSY97_clean.csv")) %>%
   labs(
     x = "Race", 
     y = "Mean Incarcerations", 
-    fill = "Gender",
-    title = "Mean Number of Incarcerations in 2002 by Race and Gender") +
+    fill = "Gender",) +
   theme_minimal()
 
 ggsave(here("figures/incarcerations_by_racegender.png"), width=8, height=4.5)
